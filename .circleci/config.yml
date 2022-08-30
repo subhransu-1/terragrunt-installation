@@ -1,0 +1,16 @@
+version: 2.1
+orbs:
+  terragrunt: dialogue/terragrunt@1.6.0
+jobs:
+  example-job:
+    docker:
+      # replace with your preferred image
+      - image: cimg/base:stable
+    steps:
+      - terragrunt/install-terragrunt:
+          version: '0.7.4' 
+
+workflows:
+  example-workflow:
+    jobs:
+      - example-job
